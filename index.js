@@ -34,6 +34,37 @@ function isPalindrome(myString){
     }
 }
 
+function addUpTo(myArray, index){
+    if(index > 0){
+        return addUpTo(myArray.slice(1), index - 1) + myArray[0]
+    }
+    else{
+        return myArray[0]
+    }
+}
+
+function maxOf(myArray){
+    if(myArray.length > 1){
+        return Math.max(myArray.pop(), maxOf(myArray))
+    }
+    else{
+        return myArray[0]
+    }
+}
+
+function includesNumber(array, number){
+    if(array.length > 0){
+        if(array[0] === number){
+            return true
+        }
+        else{
+            return includesNumber(array.slice(1), number)
+        }
+    }
+    else{
+        return false
+    }
+}
 
 
 
